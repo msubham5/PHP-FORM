@@ -7,45 +7,28 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-	<!--Bootstrap css-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-
-	<!-- Custom CSS-->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-	<title>Registration Page</title>
-
-
-
+	<title>Form in PHP</title>
 </head>
 <body>
-	<div class="container-fluid" id="main_container">
-		<br>
+	<div class="container" id="main_container">
 		<div class="row justify-content-center">
 			<div class="col-md-5">
-				<div class="card">
-                <!--Header-->      
+				<div class="card">  
 					<header class="card-header">
 						<a href class="float-right btn btn-outline-primary mt-1">Log In</a>
 						<h4 class="card-title mt-2">Registration</h4>
 					</header>
-					<article class="card-body">
-                <!--Form Body-->       
+					<article class="card-body">   
 						<form  id="signup" class="form" method="post"  enctype="multipart/form-data" >
-
-					<!--Name Field-->		
 							<div class="row form-group">
 								<div class="col">
 									<label  for="name">Name</label>
 									<input type="text" class="form-control" id="name" name="name">
 									<span class="error" id="error_name">This field is required</span>
 								</div>														
-							</div>
-							
-					<!--Gender Field-->		
+							</div>	
 							<div class="form-group">
                                 <label>Gender</label>
                                 <div>
@@ -55,23 +38,17 @@ session_start();
 									<label><input type="radio" name="gender" value="2"> Female</label>
 								</div>
                                <span class="error" id="error_gender">Please select your gender</span>
-							</div>
-
-					<!--Email Field-->		
+							</div>	
 							<div class="form-group">
 								<label for="email">Email Address</label>
 								<input type="email" class="form-control" id="email" name="email">
 								<span class="error" id="error_email">A valid email address is required</span>
-							</div>
-
-					<!--Contact Number Field-->		
+							</div>	
 							<div class="form-group">
 								<label for="phone">Contact Number</label>
 								<input type="text" class="form-control"  name="phone" id="phone">
 								<span class="error" id="error_phone">This field is required</span>
 							</div>
-							
-					<!--Skills Field-->		
 							<div class="form-group">
 								<label>Skills</label>
 							</div>
@@ -83,9 +60,7 @@ session_start();
 								<label class="checkbox-inline" for="php"><input type="checkbox" name="skills[]" class="checkboxvar" value="php" id="php"> PHP</label>
                                 <br>
 								<span class="error" id="error_skills">Please select atleast one skill</span>
-							</div> 
-
-					<!--Profile Picture Field-->		
+							</div> 		
 							<div class="form-group">
 								<label for="profile_pic">Upload Profile Photo:</label>
 								<input type="file" class="form-control" name="profile_pic" id="profile_pic">
@@ -93,8 +68,6 @@ session_start();
                                 <input type="button" name="upload" value="Upload" id="upload">
 								<span class="error">Please upload a profile photo</span>
 							</div>
-
-					<!--User About Field-->		
 							<div class="form-group">
 								<label for="about">About</label>
 								<textarea class="form-control" rows="3" name="about" placeholder="Enter something about yourself." id="about"></textarea>
@@ -104,9 +77,7 @@ session_start();
 								<label for="addr">Address</label>
 								<input type="text" class="form-control" id="addr" name="addr">
 								<span class="error" id="error_address">This field is required</span>
-							</div>
-
-					<!--Educational Qualification Field-->		
+							</div>	
 							<div class="form-group">
 								<label for="education">Educational Qualification</label>
 								<div class="dropdown" id="drop_education" name="drop_education">
@@ -120,8 +91,6 @@ session_start();
 									<span class="error" id="error_edu">Please select a option</span>	
 								</div>
 							</div>
-
-					<!--Professional Links Field-->		
 							<div class="form-group">
 								<label for="links">Professional Links:</label>
 								<br>
@@ -130,19 +99,13 @@ session_start();
                                 <br>
 								<input type="text" class="form-control" name="github" placeholder="Github" id="github">
                                 <span class="error" id="error_github">This field is required</span>
-							</div>
-
-					<!--Register button-->		
+							</div>	
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary btn-block" name="register" id="register">Register</button>
 								
 							</div>
 						</form>
                         <div>
-
-                    <!--Server Side validation--> 
-
-                    <!-- To check if the server side validation is working or not please comment out line number 395 which includes "js/register.js" as scipt -->   
 
                             <?php
 
@@ -371,7 +334,7 @@ session_start();
 	                                    $_SESSION["linkedin"] = $linkedin;
 	                                    $_SESSION["github"] = $github;
 
-	                                    echo "<script>location.href='php/output.php';</script>";
+	                                    echo "<script>location.href='php/profile.php';</script>";
 	                                    exit;
 	                                }
 	                            }
@@ -382,12 +345,7 @@ session_start();
             </div>
         </div>
     </div>
-
-    <!--Script to use jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Script for client side validation -->
-    <script src="js/client_validation.js"></script>
-
+    <script src="js/form_validation.js"></script>
 </body>
 </html>
