@@ -1,101 +1,103 @@
 body {
-  background-color: #ddd;
+	background-color: #ddd;
 }
 
 .main {
-  justify-content: center;
+	justify-content: center;
 }
 
-#signup label {
-  display: inline-block;
+#signup label{
+	display: inline-block;
 }
 
 .justify-content-center {
-  justify-content: center !important;
+	justify-content: center !important;
 }
 
 .card-header {
-  padding: 0.75rem 1.25rem;
+	padding: 0.75rem 1.25rem;
 }
 
 .mt-1 {
-  margin-top: 0.25rem !important;
+	margin-top: .25rem !important;
 }
 
 .float-right {
-  float: right !important;
+	float: right !important;
 }
 
 .card-title {
-  margin-bottom: 0.75rem;
+	margin-bottom: .75rem;
 }
 
 .mt-2 {
-  margin-top: 0.5rem !important;
+	margin-top: .5rem !important;
 }
 
 .card-body {
-  padding: 1.25rem;
+	padding: 1.25rem;
 }
 
 div {
-  display: block;
+	display: block;
+}
+
+.form-check-input{
+	height: 0.8rem;
+	width: 100%;
+	
 }
 
 #about {
-  height: 100px;
+	height: 100px;
 }
 
-.checkbox,
-label {
-  margin-right: 15px;
+.checkbox, label{
+	margin-right: 15px;
 }
 
-.form-row > .col {
-  padding-right: 5px;
-  padding-left: 5px;
-  margin-bottom: 1rem;
+.form-row> .col {
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-bottom: 1rem;	
 }
 .form-group {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 label {
-  display: block;
-  margin-bottom: 0.5rem;
-  margin-top: ;
+	display: block;
+	margin-bottom: .5rem;
+	margin-top:
+
 }
 
 input {
-  border-radius: 0.25rem;
-  border: 1px solid #bab;
+	border-radius: 0.25rem;
+    border: 1px solid #bab;
 }
 
 .btn-block {
-  display: block;
-  width: 100%;
+	display: block;
+	width: 100%;
 }
 
-.error {
-  display: none;
+.error{
+	display: none;
+}		
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+	font-size: 13px;
 }
 
-.error_show {
-  color: red;
-  margin-left: 10px;
-  font-size: 13px;
+input.invalid, textarea.invalid, select.invalid{
+	border: 2px solid red;
 }
 
-input.invalid,
-textarea.invalid,
-select.invalid {
-  border: 2px solid red;
-}
-
-input.valid,
-textarea.valid,
-select.valid {
-  border: 2px solid green;
+input.valid, textarea.valid, select.valid{
+	border: 2px solid green;
 }
 
 .accordion {
@@ -113,8 +115,7 @@ select.valid {
   margin-bottom: 2px;
 }
 
-.active,
-.accordion:hover {
+.active, .accordion:hover {
   background-color: #ccc;
 }
 
