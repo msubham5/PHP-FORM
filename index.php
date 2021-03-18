@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +5,9 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<title>Form in PHP</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="js/validation.js" defer></script>
+	<title>Form Validation in PHP</title>
 </head>
 <body>
 	<div class="container" id="main_container">
@@ -20,8 +18,8 @@ session_start();
 						<a href class="float-right btn btn-outline-primary mt-1">Log In</a>
 						<h4 class="card-title mt-2">Registration</h4>
 					</header>
-					<article class="card-body">   
-						<form  id="signup" class="form" method="post"  enctype="multipart/form-data" >
+					<article class="card-body">    
+						<form  id="signup" class="form" method="post"  enctype="multipart/form-data" >	
 							<div class="row form-group">
 								<div class="col">
 									<label  for="name">Name</label>
@@ -48,7 +46,7 @@ session_start();
 								<label for="phone">Contact Number</label>
 								<input type="text" class="form-control"  name="phone" id="phone">
 								<span class="error" id="error_phone">This field is required</span>
-							</div>
+							</div>	
 							<div class="form-group">
 								<label>Skills</label>
 							</div>
@@ -60,14 +58,13 @@ session_start();
 								<label class="checkbox-inline" for="php"><input type="checkbox" name="skills[]" class="checkboxvar" value="php" id="php"> PHP</label>
                                 <br>
 								<span class="error" id="error_skills">Please select atleast one skill</span>
-							</div> 		
+							</div> 	
 							<div class="form-group">
 								<label for="profile_pic">Upload Profile Photo:</label>
 								<input type="file" class="form-control" name="profile_pic" id="profile_pic">
-								<br>
-                                <input type="button" name="upload" value="Upload" id="upload">
+                                <input type="button" class="mt-2" name="upload" value="Upload" id="upload">
 								<span class="error">Please upload a profile photo</span>
-							</div>
+							</div>	
 							<div class="form-group">
 								<label for="about">About</label>
 								<textarea class="form-control" rows="3" name="about" placeholder="Enter something about yourself." id="about"></textarea>
@@ -90,7 +87,7 @@ session_start();
 									</select>
 									<span class="error" id="error_edu">Please select a option</span>	
 								</div>
-							</div>
+							</div>	
 							<div class="form-group">
 								<label for="links">Professional Links:</label>
 								<br>
@@ -107,6 +104,7 @@ session_start();
 						</form>
                         <div>
 
+                    <!--Server Side validation--> 
                             <?php
 
 	                            if(isset($_POST["register"]))
@@ -201,9 +199,6 @@ session_start();
 	                                    if($_FILES["profile_pic"]["error"] == 0)
 	                                    {
 
-	                            //no errors with the file
-
-	                            //alloweed file type array
 	                                        $allowed_types = array("image/jpeg", "image/jpg", "image/png", "image/gif");
 
 	                                        if((in_array($_FILES["profile_pic"]["type"], $allowed_types)))
@@ -321,19 +316,6 @@ session_start();
 	                                if(!$error)
 	                                {
 
-	                            /// Creating session variables
-	                                    $_SESSION["name"] = $name;
-	                                    $_SESSION["gender"] = $gender; 
-	                                    $_SESSION["email"] = $email ;
-	                                    $_SESSION["phone"] = $phone;
-	                                    $_SESSION["skills"] = $skills;
-	                                    $_SESSION["profile_pic"] = $photo;
-	                                    $_SESSION["about"] = $about;
-	                                    $_SESSION["addr"] = $address;
-	                                    $_SESSION["education"] = $education;
-	                                    $_SESSION["linkedin"] = $linkedin;
-	                                    $_SESSION["github"] = $github;
-
 	                                    echo "<script>location.href='php/profile.php';</script>";
 	                                    exit;
 	                                }
@@ -345,7 +327,5 @@ session_start();
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/form_validation.js"></script>
 </body>
 </html>

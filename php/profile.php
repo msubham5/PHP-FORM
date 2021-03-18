@@ -1,25 +1,24 @@
 <?php
-	session_start();
 
-if($_SESSION)
+if(isset($_POST["register"]))
 {
 
-// Reading session variables to get the value of form data
-    $name = $_SESSION["name"];
-    $gender = $_SESSION["gender"];
-    $email = $_SESSION["email"];
-    $phone = $_SESSION["phone"];
-    $skills = $_SESSION["skills"];
-    $photo = $_SESSION["profile_pic"];
-    $about = $_SESSION["about"];
-    $address = $_SESSION["addr"];
-    $education = $_SESSION["education"];
-    $linkedin = $_SESSION["linkedin"];
-    $github = $_SESSION["github"];
+// Reading values of form data using POST method
+	$name = $_POST["name"];
+	$gender = $_POST["gender"];
+	$email = $_POST["email"];
+	$phone = $_POST["phone"];
+	$skills = $_POST["skills"];
+	$photo = $_POST["profile_pic"];
+	$about = $_POST["about"];
+	$address = $_POST["addr"];
+	$education = $_POST["education"];
+	$linkedin = $_POST["linkedin"];
+	$github = $_POST["github"];
 
 
 // Showing the data inputs by the user 
-    echo "Your inputs:". "<br />";
+	echo "Your inputs:". "<br />";
 	echo "-------------------------------------". "<br />";
 	echo "Name: " . $name . "<br />";
 	echo "Gender:";
@@ -43,10 +42,7 @@ if($_SESSION)
 	echo "Education Qualification: " . $education . "<br />";
 	echo "Linkedin url: ". $linkedin. "<br/>";
 	echo "Github url: ". $github. "<br/>";
+
 }
-
-// Destroying session
-	session_destroy();
-
 
 ?>
